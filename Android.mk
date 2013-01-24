@@ -32,6 +32,7 @@ LOCAL_SRC_FILES:= \
 	src/hb-common.cc \
 	src/hb-fallback-shape.cc \
 	src/hb-font.cc \
+	src/hb-ft.cc \
 	src/hb-ot-tag.cc \
 	src/hb-set.cc \
 	src/hb-shape.cc \
@@ -49,26 +50,19 @@ LOCAL_SRC_FILES:= \
 	src/hb-ot-shape-complex-thai.cc \
 	src/hb-ot-shape-normalize.cc \
 	src/hb-ot-shape-fallback.cc \
-	src/hb-icu.cc
+	src/hb-ucdn.cc \
+	src/ucdn.c
 
 LOCAL_CPP_EXTENSION := .cc
 
-LOCAL_SHARED_LIBRARIES := \
-        libcutils \
-        libicuuc \
-        libicui18n \
-        libutils
-
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/src \
-        external/icu4c/common
+	$(LOCAL_PATH)/../freetype/include
 
-LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_ICU
+LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_UCDN
 
-LOCAL_LDLIBS += -lpthread
+LOCAL_MODULE := libharfbuzz_ng
 
-LOCAL_MODULE:= libharfbuzz_ng
+LOCAL_STATIC_LIBRARIES := ft2
 
-include $(BUILD_SHARED_LIBRARY)
-
-
+include $(BUILD_STATIC_LIBRARY)
