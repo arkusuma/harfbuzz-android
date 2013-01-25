@@ -51,12 +51,13 @@ LOCAL_SRC_FILES:= \
 	src/hb-ot-shape-normalize.cc \
 	src/hb-ot-shape-fallback.cc \
 	src/hb-ucdn.cc \
-	src/ucdn.c
+	src/hb-ucdn/ucdn.c
 
 LOCAL_CPP_EXTENSION := .cc
 
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/src \
+        $(LOCAL_PATH)/src/hb-ucdn \
 	$(LOCAL_PATH)/../freetype/include
 
 LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_UCDN
