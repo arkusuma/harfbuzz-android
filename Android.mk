@@ -61,8 +61,9 @@ LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH)/../freetype/include
 
 LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_UCDN
+LOCAL_CPPFLAGS += -std=c++14
 
-LOCAL_MODULE := libharfbuzz_ng
+LOCAL_MODULE := libharfbuzz
 
 LOCAL_STATIC_LIBRARIES := ft2
 
