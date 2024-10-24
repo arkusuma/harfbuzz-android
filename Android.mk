@@ -60,7 +60,7 @@ LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/src/hb-ucdn \
 	$(LOCAL_PATH)/../freetype/include
 
-LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_UCDN
+LOCAL_CFLAGS += -DHB_NO_MT -DHAVE_OT -DHAVE_UCDN -w
 LOCAL_CPPFLAGS += -std=c++14
 
 LOCAL_MODULE := libharfbuzz
